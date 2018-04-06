@@ -1,0 +1,29 @@
+<template>
+    <div class="main-nav">
+        <div v-on:click="toggleNav" id="burger-icon" v-bind:class="{ collapse: menuCollapsed }">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="clearfix"></div>
+        <nav>
+            <div id="sidebar" class="aspect-nav-menu" v-bind:class="{ collapse: menuCollapsed }">
+                <div>
+                    <h1 className="aspect-nav-heading">
+                        <span>Navigation Toolbar</span>
+                    </h1>
+                    <i className="material-icons" title="search">search</i>
+                    <input type="search" placeholder="Search..." />
+                </div>
+                <ul>
+                    <li v-for="navItem in nav">
+                        <navmenuitem-component :navItem="navItem" />
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</template>
+
+<script src="./navmenu.ts" />
+<style src="./navmenu.less" />

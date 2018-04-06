@@ -1,0 +1,1 @@
+{"version":3,"sources":["..\\..\\./ClientApp/css/site.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA,C","file":"vendor.css","sourcesContent":["@media (max-width: 767px) {\r\n    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\r\n    body {\r\n        padding-top: 50px;\r\n    }\r\n}"],"sourceRoot":""}
