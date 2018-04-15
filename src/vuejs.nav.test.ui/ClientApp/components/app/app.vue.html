@@ -1,12 +1,8 @@
 <template>
-    <div id='app-root' class="container">
-        <div class="row">
-            <div class="one-third column">
-                <menu-component />
-            </div>
-            <div class="two-thirds column">
-                <router-view></router-view>
-            </div>
+    <div id='app-root'>
+        <menu-component :menuExpanded="menuExpanded" />
+        <div class="main" v-bind:class="{ expand: menuExpanded }">
+            <router-view></router-view>
         </div>
     </div>
 </template>

@@ -1,13 +1,13 @@
 <template>
-    <div class="main-nav">
-        <div v-on:click="toggleNav" id="burger-icon" v-bind:class="{ collapse: menuCollapsed }">
+    <div class="main-nav" v-bind:class="{ expand: menuExpanded }">
+        <div v-on:click="toggleNav" id="burger-icon" v-bind:class="{ expand: menuExpanded }">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <div class="clearfix"></div>
         
-            <div id="sidebar" class="aspect-nav-menu" v-bind:class="{ collapse: menuCollapsed }">
+            <div id="sidebar" class="aspect-nav-menu" v-bind:class="{ expand: menuExpanded }">
                 <div>
                     <h1 className="aspect-nav-heading">
                         <span>Navigation Toolbar</span>
@@ -20,5 +20,4 @@
     </div>
 </template>
 
-<script src="./navmenu.ts" />
-<style src="./navmenu.less" />
+<script src="./navmenu.ts"></script>

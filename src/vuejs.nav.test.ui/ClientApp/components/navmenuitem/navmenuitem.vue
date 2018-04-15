@@ -1,8 +1,9 @@
 <template>
     <nav>
-        <ul class="navmenu" v-for="navItem in navItems">
-            <template v-if="getType(navItem.type) === 'header'">
-                <li>
+        <ul class="navmenu">
+            <li v-for="navItem in navItems">
+                <template v-if="getType(navItem.type) === 'header'">
+
                     <h2 className="aspect-sub-nav-heading">
                         <span>{{navItem.title}}</span>
                     </h2>
@@ -11,32 +12,26 @@
                         <nav-menu :navItems="navItem.navItems" />
                         <!--</ul>-->
                     </section>
-                </li>
-            </template>
-            <template v-else-if="getType(navItem.type) === 'group'">
-                <li key="{navItem.id}">
-                    <a href="#">
+                </template>
+                <template v-else-if="getType(navItem.type) === 'group'">
+                    <a href="#" key="{navItem.id}">
                         <i class="fas fa-caret-right"></i>
                         <span>{{navItem.title}}</span>
                         <div v-if="showRightChevron(navItem)">
                             <i class="fas fa-chevron-right"></i>
                         </div>
                     </a>
-                </li>
-            </template>
-            <template v-else-if="getType(navItem.type) === 'link'">
-                <li>
+                </template>
+                <template v-else-if="getType(navItem.type) === 'link'">
                     <a href="#" v-on:click="navItem.selectItem(navItem)">
                         <i class="fas fa-caret-right"></i>
                         <span className="myspan">{{navItem.title}}</span>
                     </a>
-                </li>
-            </template>
-            <template v-else>
-                <li>
+                </template>
+                <template v-else>
                     Not A/B/C
-                </li>
-            </template>
+                </template>
+            </li>
         </ul>
     </nav>
 </template>
@@ -79,3 +74,6 @@
         navItems?: Array<INavItem>;
     }
 </script>
+
+<style lang="scss">
+</style>

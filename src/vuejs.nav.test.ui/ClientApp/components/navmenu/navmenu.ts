@@ -2,11 +2,13 @@ import Vue from "vue";
 import { Component } from "vue-property-decorator";
 import NavMenuItemComponent from "../navmenuitem/navmenuitem.vue"
 
+import "./navmenu.scss"
+
 @Component({
     components: { 'nav-menu': NavMenuItemComponent }
 })
 export default class NavMenuComponent extends Vue {
-    menuCollapsed = false;
+    menuExpanded = false;
     nav = new Array<INavItem>();
 
     mounted() {
@@ -36,7 +38,7 @@ export default class NavMenuComponent extends Vue {
     }
 
     toggleNav() {
-        this.menuCollapsed = !this.menuCollapsed;
+        this.menuExpanded = !this.menuExpanded;
     }
 }
 
